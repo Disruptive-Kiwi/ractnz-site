@@ -47,10 +47,10 @@ export default function App() {
           <div className="w-full py-6 flex items-center justify-between border-b border-gray-200">
             <div className="flex items-center">
               <a href="#">
-                <span className="sr-only">Rajasthani Association NZ</span>
+                <span className="sr-only">Rajasthan Association NZ</span>
                   <img className="h-12 w-12" src="/ractnz-small-logo.svg" alt="RACTNZ Small Logo" />
               </a>
-              <a href="#" className="ml-3 text-xl font-bold text-gray-900">Rajasthani Association NZ</a>
+              <a href="#" className="ml-3 text-xl font-bold text-gray-900">Rajasthan Association NZ</a>
             </div>
             <div className="hidden md:flex space-x-8">
               <a href="#about" className="text-base font-medium text-gray-500 hover:text-gray-900">About</a>
@@ -180,7 +180,7 @@ export default function App() {
               <div className="bg-gray-50 rounded-lg p-8">
                 <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
                 <p className="mt-4 text-gray-600">
-                  The Rajasthani Association of New Zealand was founded to bring together the diverse Rajasthani community living across Aotearoa. 
+                  The Rajasthan Association of New Zealand was founded to bring together the diverse Rajasthani community living across Aotearoa. 
                   We aim to preserve and promote Rajasthani culture while embracing our new home in New Zealand.
                 </p>
                 <p className="mt-4 text-gray-600">
@@ -567,13 +567,13 @@ export default function App() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center">
                 <a href="#">
-                  <span className="sr-only">Rajasthani Association NZ</span>
+                  <span className="sr-only">Rajasthan Association NZ</span>
                     <img className="h-12 w-12" src="/ractnz-small-logo.svg" alt="RACTNZ Small Logo" />
                 </a>
-                <a href="#" className="ml-3 text-xl font-bold text-white">Rajasthani Association NZ</a>
+                <a href="#" className="ml-3 text-xl font-bold text-white">Rajasthan Association NZ</a>
               </div>
               <p className="mt-4 text-gray-300">
-                The Rajasthani Association of New Zealand connects the Rajasthani community across Aotearoa, 
+                The Rajasthan Association of New Zealand connects the Rajasthani community across Aotearoa, 
                 promoting cultural heritage and fostering friendships among people from all backgrounds.
               </p>
             </div>
@@ -627,7 +627,7 @@ export default function App() {
           
           <div className="mt-12 border-t border-gray-700 pt-8">
             <p className="text-base text-gray-400 text-center">
-              &copy; {new Date().getFullYear()} Rajasthani Association NZ. All rights reserved.
+              &copy; {new Date().getFullYear()} Rajasthan Association NZ. All rights reserved.
             </p>
           </div>
         </div>
