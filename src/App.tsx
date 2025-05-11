@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import heroImage from './assets/images/ractnz-group-pic.jpg';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -127,9 +128,9 @@ export default function App() {
           <div className="relative z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
             <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
               <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">Connecting Rajasthani</span>{' '}
-                  <span className="block text-yellow-300 xl:inline">Community in New Zealand</span>
+                <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl pr-3">
+                  <span className="block xl:inline">Connecting Rajasthanis</span>{' '}
+                  <span className="block text-yellow-300 xl:inline">in New Zealand</span>
                 </h1>
                 <p className="mt-3 text-base text-gray-100 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   Celebrating our rich heritage, fostering connections, and building a vibrant Rajasthani community across Aotearoa.
@@ -159,8 +160,8 @@ export default function App() {
         <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://picsum.photos/id/1062/1200/800"
-            alt="Rajasthani cultural event in New Zealand"
+            src={heroImage}
+            alt="Ractnz group picture"
           />
         </div>
       </div>
@@ -171,7 +172,7 @@ export default function App() {
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">About Us</h2>
             <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
-              Connecting Rajasthani Roots in Aotearoa
+              Connecting Rajasthanis Across Aotearoa
             </p>
             <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
               Bridging cultures and building community through shared heritage and traditions.
