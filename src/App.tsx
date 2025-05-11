@@ -172,7 +172,7 @@ export default function App() {
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">About Us</h2>
             <p className="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight">
-              Connecting Rajasthanis Across Aotearoa
+              Celebrating Our Rajasthani Roots in Aotearoa
             </p>
             <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
               Bridging cultures and building community through shared heritage and traditions.
@@ -369,7 +369,7 @@ export default function App() {
                   <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  <span>Discounts on event tickets and community services</span>
+                  <span>Discounts on event tickets</span>
                 </li>
               </ul>
             </div>
@@ -496,7 +496,7 @@ export default function App() {
                   </svg>
                   <div>
                     <p className="text-lg font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600 mt-1">info@rajasthani.nz</p>
+                    <p className="text-gray-600 mt-1">ractnz@gmail.com</p>
                   </div>
                 </div>
               </div>
