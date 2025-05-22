@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+This rule outlines the purpose and usage guidelines for key documentation files within the project. Adhering to these helps maintain context, consistency, and project alignment.
+
+### Core Documentation Usage
+
+**`@docs/TODO.md`**
+*   **Purpose**: Running task list, ordered by priority (top = next most important). Completed tasks marked with ✅ are moved to the bottom.
+*   **Usage**:
+    *   **Read**: Before starting *and* after completing any task.
+    *   **Update**:
+        *   Move completed tasks (with ✅) below active tasks and add a timestamp (e.g., `[YYYY-MM-DD]`) indicating when it was completed.
+        *   Add newly identified tasks (features, ideas, deferred items) below existing active tasks but above the completed ones.
