@@ -308,7 +308,9 @@ export default function App() {
 
           <div className="mt-12 text-center">
             <a
-              href="#join"
+              href="https://www.facebook.com/profile.php?id=61555767819964"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition duration-150 ease-in-out"
             >
               View More Photos
