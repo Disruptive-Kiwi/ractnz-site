@@ -1,42 +1,73 @@
 import { useState } from 'react';
 import heroImage from './assets/images/ractnz-group-pic.jpg';
+import eventGangaurPuja from './assets/images/event-gangaur-puja.JPG';
+import eventCulturalDay from './assets/images/event-cultural-day.png';
+import eventDiwaliDance from './assets/images/event-diwali-dance.JPG';
+import eventHariyaliTeej from './assets/images/event-hariyali-teej.jpg';
+import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picnic.JPG';
+
+
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Helper function to format event dates
+  const formatEventDate = (dateString: string) => {
+    // Check if it's just month and year (like "June 2025", "July 2025")
+    const monthYearPattern = /^[A-Za-z]+ \d{4}$/;
+    
+    if (monthYearPattern.test(dateString)) {
+      // Just return the month and year as-is
+      return dateString;
+    }
+    
+    // If it's a specific date, format it properly
+    const date = new Date(dateString);
+    if (!isNaN(date.getTime())) {
+      return date.toLocaleDateString('en-NZ', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+      });
+    }
+    
+    // Fallback: return as-is if we can't parse it
+    return dateString;
+  };
   
   // Mock data for events
   const events = [
     {
       id: 1,
-      title: "Rajasthani Cultural Festival",
-      date: "2023-11-25",
-      location: "Auckland Domain",
-      description: "Annual celebration of Rajasthani culture with folk music, dance, and traditional food."
+      title: "International Yoga Day",
+      date: "June 2025",
+      location: "TBC",
+      description: "Yoga, mindfulness, and wellness celebration."
     },
     {
       id: 2,
-      title: "Diwali Celebration",
-      date: "2023-10-24",
-      location: "Wellington Community Centre",
-      description: "Join us for our biggest event of the year with fireworks, rangoli, and festive treats."
+      title: "Sinjara & Teej",
+      date: "July 2025",
+      location: "TBC",
+      description: "Traditional Rajasthani festivals celebration."
     },
     {
       id: 3,
-      title: "Heritage Talk Series",
-      date: "2023-12-10",
-      location: "Christchurch Library",
-      description: "Monthly talks exploring Rajasthani history, art, and traditions."
+      title: "Ganesh Chaturthi",
+      date: "August 2025",
+      location: "TBC",
+      description: "Lord Ganesha festival with prayers and performances."
     }
   ];
 
   // Mock data for gallery
   const gallery = [
-    { id: 1, src: "https://picsum.photos/id/1062/800/600", alt: "Cultural Festival" },
-    { id: 2, src: "https://picsum.photos/id/1074/800/600", alt: "Traditional Dance" },
-    { id: 3, src: "https://picsum.photos/id/1076/800/600", alt: "Community Gathering" },
-    { id: 4, src: "https://picsum.photos/id/1075/800/600", alt: "Children's Activities" },
-    { id: 5, src: "https://picsum.photos/id/1078/800/600", alt: "Food Festival" },
-    { id: 6, src: "https://picsum.photos/id/1079/800/600", alt: "Wedding Ceremony" }
+    { id: 1, src: eventCulturalDay, alt: "Rajasthani Cultural Day" },
+    { id: 2, src: eventGangaurPuja, alt: "Gangaur Puja" },
+    { id: 3, src: eventDiwaliDance, alt: "Auckland Diwali Dance" },
+    { id: 4, src: eventHariyaliTeej, alt: "Hariyali Teej" },
+    { id: 5, src: eventBasantPanchmiPicnic, alt: "Basant Panchmi Picnic" },
+    { id: 6, src: heroImage, alt: "Rajasthan Diwas Celebration" },
   ];
 
   return (
@@ -249,7 +280,7 @@ export default function App() {
                     <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <span>{new Date(event.date).toLocaleDateString('en-NZ', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                    <span>{formatEventDate(event.date)}</span>
                   </div>
                   <div className="mt-2 flex items-center text-gray-500">
                     <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,18 +293,6 @@ export default function App() {
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <a
-              href="#join"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 transition duration-150 ease-in-out"
-            >
-              View All Events
-              <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
           </div>
         </div>
       </section>
@@ -374,76 +393,28 @@ export default function App() {
             
             <div className="bg-white rounded-lg shadow-md p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Join Our Community</h3>
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Full Name
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="location" className="block text-sm font-medium text-gray-700">
-                    Location in New Zealand
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      id="location"
-                      name="location"
-                      type="text"
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="reason" className="block text-sm font-medium text-gray-700">
-                    Why do you want to join?
-                  </label>
-                  <div className="mt-1">
-                    <textarea
-                      id="reason"
-                      name="reason"
-                      rows={3}
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out"
-                  >
-                    Submit Application
-                  </button>
-                </div>
-              </form>
+              
+              <div className="text-center">
+                <p className="text-gray-600 mb-8">
+                  Ready to become part of our vibrant Rajasthani community? Fill out our membership application form and we'll get back to you soon!
+                </p>
+                
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdmZFwsOkWwh5wprRLtggi2LvEkNKD1N2zxLL9xbgQM5jpHrg/viewform?usp=header"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+                >
+                  Fill Out Membership Form
+                  <svg className="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-2M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+                
+                <p className="text-sm text-gray-500 mt-4">
+                  The form will open in a new tab and takes about 2-3 minutes to complete.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -458,105 +429,35 @@ export default function App() {
               Get in Touch
             </p>
             <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
-              Have questions or want to connect? Reach out to us!
+              Have questions or want to connect? We'd love to hear from you!
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+          <div className="mt-12 text-center">
+            <div className="bg-gray-50 rounded-lg p-12 max-w-2xl mx-auto">
+              <svg className="h-16 w-16 text-orange-500 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
               
-              <div className="mt-6">
-                <div className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <div>
-                    <p className="text-lg font-medium text-gray-900">Our Address</p>
-                    <p className="text-gray-600 mt-1">123 Main Street<br />Auckland, New Zealand</p>
-                  </div>
-                </div>
-                
-                <div className="mt-6 flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <div>
-                    <p className="text-lg font-medium text-gray-900">Phone</p>
-                    <p className="text-gray-600 mt-1">+64 123 456 789</p>
-                  </div>
-                </div>
-                
-                <div className="mt-6 flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-3 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <div>
-                    <p className="text-lg font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600 mt-1">ractnz@gmail.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gray-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="contact-name" className="block text-sm font-medium text-gray-700">
-                    Full Name
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      id="contact-name"
-                      name="contact-name"
-                      type="text"
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="contact-email" className="block text-sm font-medium text-gray-700">
-                    Email Address
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      id="contact-email"
-                      name="contact-email"
-                      type="email"
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Message
-                  </label>
-                  <div className="mt-1">
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm"
-                    ></textarea>
-                  </div>
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Send us an email</h3>
+              <p className="text-gray-600 mb-8">
+                For any questions, membership inquiries, or general information, feel free to reach out to us directly.
+              </p>
+              
+              <a
+                href="mailto:ractnz@gmail.com"
+                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out"
+              >
+                                 <svg className="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                 </svg>
+                 <span className="md:hidden">Email Us</span>
+                 <span className="hidden md:inline">Email Us: ractnz@gmail.com</span>
+              </a>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                We typically respond within 24-48 hours.
+              </p>
             </div>
           </div>
         </div>

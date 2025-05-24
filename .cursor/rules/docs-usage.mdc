@@ -12,5 +12,5 @@ This rule outlines the purpose and usage guidelines for key documentation files 
 *   **Usage**:
     *   **Read**: Before starting *and* after completing any task.
     *   **Update**:
-        *   Move completed tasks (with ✅) below active tasks and add a timestamp (e.g., `[YYYY-MM-DD]`) indicating when it was completed.
+        *   Move completed tasks (with ✅) below active tasks and add a timestamp for the current day (e.g., `[YYYY-MM-DD]`) indicating when it was completed.
         *   Add newly identified tasks (features, ideas, deferred items) below existing active tasks but above the completed ones.
