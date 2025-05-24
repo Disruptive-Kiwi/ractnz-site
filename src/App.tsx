@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useGoogleAnalytics } from './hooks/useGoogleAnalytics';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import heroImage from './assets/images/ractnz-group-pic.jpg';
 import eventCulturalDay from './assets/images/event-cultural-day.png';
 import eventDiwaliDance from './assets/images/event-diwali-dance.jpeg';
@@ -265,33 +266,23 @@ export default function App() {
                 <h3 className="text-2xl font-bold text-gray-900">Our Values</h3>
                 <ul className="mt-4 space-y-3 text-gray-600">
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
                     <span>Preservation of Rajasthani culture and traditions</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
                     <span>Fostering connections among Rajasthani people in New Zealand</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
                     <span>Promoting understanding between Rajasthani and New Zealand cultures</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
                     <span>Supporting community development and charitable causes</span>
                   </li>
                   <li className="flex items-start">
-                    <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
                     <span>Providing a support network for new immigrants from Rajasthan</span>
                   </li>
                 </ul>
@@ -401,38 +392,28 @@ export default function App() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="bg-white rounded-lg shadow-md p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Membership Benefits</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Access to exclusive community events and festivals</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Opportunities to connect with fellow Rajasthani expatriates</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Participation in cultural preservation initiatives</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Support for new immigrants from Rajasthan</span>
-                </li>
-                <li className="flex items-start">
-                  <svg className="h-6 w-6 text-orange-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Discounts on event tickets</span>
-                </li>
-              </ul>
+                              <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
+                    <span>Access to exclusive community events and festivals</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
+                    <span>Opportunities to connect with fellow Rajasthani expatriates</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
+                    <span>Participation in cultural preservation initiatives</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
+                    <span>Support for new immigrants from Rajasthan</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckIcon className="h-6 w-6 text-orange-500 mr-2 flex-shrink-0" />
+                    <span>Discounts on event tickets</span>
+                  </li>
+                </ul>
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-8">

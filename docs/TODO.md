@@ -1,4 +1,5 @@
 [] Figure out how to dynamically update events and gallery photos using Google Sheets as a backend 
+[] Figure out how to add newsletters and annual reports to the site
 [] Add animations for improved UX
   [] Add gentle slide-in & out animation for mobile hamburger menu
   [] Add hover animations for CTA buttons (subtle pulse/glow effects)
