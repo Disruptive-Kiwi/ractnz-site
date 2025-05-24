@@ -1,4 +1,3 @@
-[] Add Google Analytics
 [] Figure out how to dynamically update events and gallery photos using Google Sheets as a backend 
 [] Add animations for improved UX
   [] Add gentle slide-in & out animation for mobile hamburger menu
@@ -12,10 +11,11 @@
   [] Add micro-animations for checkmark icons in membership benefits list
   [] Add active section highlighting in navigation based on scroll position
 
-✅ Add smooth transitions to different parts of the page from nav link clicks [2025-01-24]
-✅ Fix mobile hamburger menu - it opens up on click but then doesn't close [2025-01-24]
+✅ Add smooth transitions to different parts of the page from nav link clicks [2025-05-24]
+✅ Fix mobile hamburger menu - it opens up on click but then doesn't close [2025-05-24]
 ✅ Fix linter errors for the event images [2025-05-24]
 ✅ Hide "View All Events" button for now [2025-05-24]
+✅ Add Google Analytics [2025-05-24]
 ✅ Update join our community form to fill out a given Google form link [2025-05-24]
 ✅ Simplify Get in touch section and just have a call to action to email ractnz@gmail.com [2025-05-24]
 ✅ Update events section to show real events data [2025-05-24]
