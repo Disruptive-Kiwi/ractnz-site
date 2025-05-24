@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import heroImage from './assets/images/ractnz-group-pic.jpg';
-import eventGangaurPuja from './assets/images/event-gangaur-puja.JPG';
 import eventCulturalDay from './assets/images/event-cultural-day.png';
-import eventDiwaliDance from './assets/images/event-diwali-dance.JPG';
+import eventDiwaliDance from './assets/images/event-diwali-dance.jpeg';
+import eventGangaurPuja from './assets/images/event-gangaur-puja.jpeg';
 import eventHariyaliTeej from './assets/images/event-hariyali-teej.jpg';
-import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picnic.JPG';
-
-
+import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picnic.jpeg';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
