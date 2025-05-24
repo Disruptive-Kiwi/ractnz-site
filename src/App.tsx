@@ -8,6 +8,36 @@ import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picni
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Smooth scroll function for navigation links
+  const smoothScrollTo = (targetId: string) => {
+    if (targetId === 'top') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      return;
+    }
+
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const headerHeight = 80; // Adjust based on your header height
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Handle navigation click
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    smoothScrollTo(targetId);
+    setMobileMenuOpen(false); // Close mobile menu if open
+  };
   
   // Helper function to format event dates
   const formatEventDate = (dateString: string) => {
@@ -75,18 +105,18 @@ export default function App() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
           <div className="w-full py-6 flex items-center justify-between border-b border-gray-200">
             <div className="flex items-center">
-              <a href="#">
+              <a href="#" onClick={(e) => handleNavClick(e, 'top')}>
                 <span className="sr-only">Rajasthan Association NZ</span>
                   <img className="h-12 w-12" src="/ractnz-small-logo.svg" alt="RACTNZ Small Logo" />
               </a>
-              <a href="#" className="ml-3 text-xl font-bold text-gray-900">Rajasthan Association NZ</a>
+              <a href="#" onClick={(e) => handleNavClick(e, 'top')} className="ml-3 text-xl font-bold text-gray-900">Rajasthan Association NZ</a>
             </div>
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-base font-medium text-gray-500 hover:text-gray-900">About</a>
-              <a href="#events" className="text-base font-medium text-gray-500 hover:text-gray-900">Events</a>
-              <a href="#gallery" className="text-base font-medium text-gray-500 hover:text-gray-900">Gallery</a>
-              <a href="#join" className="text-base font-medium text-gray-500 hover:text-gray-900">Join Us</a>
-              <a href="#contact" className="text-base font-medium text-gray-500 hover:text-gray-900">Contact</a>
+              <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-base font-medium text-gray-500 hover:text-gray-900">About</a>
+              <a href="#events" onClick={(e) => handleNavClick(e, 'events')} className="text-base font-medium text-gray-500 hover:text-gray-900">Events</a>
+              <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')} className="text-base font-medium text-gray-500 hover:text-gray-900">Gallery</a>
+              <a href="#join" onClick={(e) => handleNavClick(e, 'join')} className="text-base font-medium text-gray-500 hover:text-gray-900">Join Us</a>
+              <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-base font-medium text-gray-500 hover:text-gray-900">Contact</a>
             </div>
             <div className="flex md:hidden">
               <button
@@ -110,35 +140,35 @@ export default function App() {
               <a
                 href="#about"
                 className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, 'about')}
               >
                 About
               </a>
               <a
                 href="#events"
                 className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, 'events')}
               >
                 Events
               </a>
               <a
                 href="#gallery"
                 className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, 'gallery')}
               >
                 Gallery
               </a>
               <a
                 href="#join"
                 className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, 'join')}
               >
                 Join Us
               </a>
               <a
                 href="#contact"
                 className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, 'contact')}
               >
                 Contact
               </a>
@@ -164,6 +194,7 @@ export default function App() {
                   <div className="rounded-md shadow">
                     <a
                       href="#join"
+                      onClick={(e) => handleNavClick(e, 'join')}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-orange-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
                     >
                       Join Us
@@ -172,6 +203,7 @@ export default function App() {
                   <div className="mt-3 sm:mt-0 sm:ml-3">
                     <a
                       href="#events"
+                      onClick={(e) => handleNavClick(e, 'events')}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10"
                     >
                       Upcoming Events
@@ -467,11 +499,11 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center">
-                <a href="#">
+                <a href="#" onClick={(e) => handleNavClick(e, 'top')}>
                   <span className="sr-only">Rajasthan Association NZ</span>
                     <img className="h-12 w-12" src="/ractnz-small-logo.svg" alt="RACTNZ Small Logo" />
                 </a>
-                <a href="#" className="ml-3 text-xl font-bold text-white">Rajasthan Association NZ</a>
+                <a href="#" onClick={(e) => handleNavClick(e, 'top')} className="ml-3 text-xl font-bold text-white">Rajasthan Association NZ</a>
               </div>
               <p className="mt-4 text-gray-300">
                 The Rajasthan Association of New Zealand connects the Rajasthani community across Aotearoa, 
@@ -483,19 +515,19 @@ export default function App() {
               <h3 className="text-sm font-semibold text-gray-200 tracking-wider uppercase">Quick Links</h3>
               <ul className="mt-4 space-y-4">
                 <li>
-                  <a href="#about" className="text-base text-gray-300 hover:text-white">About Us</a>
+                  <a href="#about" onClick={(e) => handleNavClick(e, 'about')} className="text-base text-gray-300 hover:text-white">About Us</a>
                 </li>
                 <li>
-                  <a href="#events" className="text-base text-gray-300 hover:text-white">Events</a>
+                  <a href="#events" onClick={(e) => handleNavClick(e, 'events')} className="text-base text-gray-300 hover:text-white">Events</a>
                 </li>
                 <li>
-                  <a href="#gallery" className="text-base text-gray-300 hover:text-white">Gallery</a>
+                  <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')} className="text-base text-gray-300 hover:text-white">Gallery</a>
                 </li>
                 <li>
-                  <a href="#join" className="text-base text-gray-300 hover:text-white">Join Us</a>
+                  <a href="#join" onClick={(e) => handleNavClick(e, 'join')} className="text-base text-gray-300 hover:text-white">Join Us</a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-base text-gray-300 hover:text-white">Contact</a>
+                  <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-base text-gray-300 hover:text-white">Contact</a>
                 </li>
               </ul>
             </div>
