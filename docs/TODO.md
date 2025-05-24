@@ -1,7 +1,7 @@
-[] Fix mobile hamburger menu - it opens up on click but then doesn't close
 [] Add smooth transitions to different parts of the page from nav link clicks
 [] Add Google Analytics
 
+✅ Fix mobile hamburger menu - it opens up on click but then doesn't close [2025-01-24]
 ✅ Fix linter errors for the event images [2025-05-24]
 ✅ Hide "View All Events" button for now [2025-05-24]
 ✅ Update join our community form to fill out a given Google form link [2025-05-24]

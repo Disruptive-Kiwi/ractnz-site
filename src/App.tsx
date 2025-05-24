@@ -92,7 +92,7 @@ export default function App() {
               <button
                 type="button"
                 className="-mr-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
-                onClick={() => setMobileMenuOpen(true)}
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <span className="sr-only">Open main menu</span>
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
