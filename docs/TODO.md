@@ -1,3 +1,5 @@
+[] Add core committee members names and photos on the site
+[] Add the association deed to the site
 [] Figure out how to dynamically update events and gallery photos using Google Sheets as a backend 
 [] Figure out how to add newsletters and annual reports to the site
 [] Add animations for improved UX

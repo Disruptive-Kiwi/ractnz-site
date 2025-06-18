@@ -79,15 +79,15 @@ export default function App() {
     {
       id: 1,
       title: "International Yoga Day",
-      date: "June 2025",
-      location: "TBC",
+      date: "21st June 2025",
+      location: "Avondale Community Centre",
       description: "Yoga, mindfulness, and wellness celebration."
     },
     {
       id: 2,
-      title: "Sinjara & Teej",
-      date: "July 2025",
-      location: "TBC",
+      title: "Teej Mela (Fair)",
+      date: "2nd August 2025",
+      location: "Blockhouse Bay Community Centre",
       description: "Traditional Rajasthani festivals celebration."
     },
     {
