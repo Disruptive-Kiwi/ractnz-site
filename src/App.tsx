@@ -7,6 +7,7 @@ import eventDiwaliDance from './assets/images/event-diwali-dance.jpeg';
 import eventGangaurPuja from './assets/images/event-gangaur-puja.jpeg';
 import eventHariyaliTeej from './assets/images/event-hariyali-teej.jpg';
 import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picnic.jpeg';
+import CommitteeSection from './components/CommitteeSection';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -128,6 +129,7 @@ export default function App() {
               <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')} className="text-base font-medium text-gray-500 hover:text-gray-900">Gallery</a>
               <a href="#join" onClick={(e) => handleNavClick(e, 'join')} className="text-base font-medium text-gray-500 hover:text-gray-900">Join Us</a>
               <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-base font-medium text-gray-500 hover:text-gray-900">Contact</a>
+              <a href="#committee" onClick={(e) => handleNavClick(e, 'committee')} className="text-base font-medium text-gray-500 hover:text-gray-900">Committee</a>
             </div>
             <div className="flex md:hidden">
               <button
@@ -185,6 +187,13 @@ export default function App() {
                 onClick={(e) => handleNavClick(e, 'contact')}
               >
                 Contact
+              </a>
+              <a
+                href="#committee"
+                className="block pl-3 pr-4 py-2 font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                onClick={(e) => handleNavClick(e, 'committee')}
+              >
+                Committee
               </a>
             </div>
           </div>
@@ -292,8 +301,11 @@ export default function App() {
         </div>
       </section>
 
+      {/* Committee Section */}
+      <CommitteeSection />
+
       {/* Events Section */}
-      <section id="events" className="py-16 bg-gray-50">
+      <section id="events" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">Events</h2>
@@ -332,7 +344,7 @@ export default function App() {
       </section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-16 bg-white">
+      <section id="gallery" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">Gallery</h2>
@@ -377,7 +389,7 @@ export default function App() {
       </section>
 
       {/* Join Us Section */}
-      <section id="join" className="py-16 bg-gray-50">
+      <section id="join" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">Get Involved</h2>
@@ -447,7 +459,7 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 bg-white">
+      <section id="contact" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-base text-orange-500 font-semibold tracking-wide uppercase">Contact</h2>
@@ -460,7 +472,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-gray-50 rounded-lg p-12 max-w-2xl mx-auto">
+            <div className="bg-white rounded-lg p-12 max-w-2xl mx-auto shadow-md">
               <svg className="h-16 w-16 text-orange-500 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -525,6 +537,9 @@ export default function App() {
                 </li>
                 <li>
                   <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')} className="text-base text-gray-300 hover:text-white">Contact</a>
+                </li>
+                <li>
+                  <a href="#committee" onClick={(e) => handleNavClick(e, 'committee')} className="text-base text-gray-300 hover:text-white">Committee</a>
                 </li>
               </ul>
             </div>
