@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+service-account-key.json
+*-key.json
+
+# Temporary scripts
+setup-test-sheet.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
