@@ -21,6 +21,9 @@ service-account-key.json
 
 # Temporary scripts
 setup-test-sheet.js
+create-jwt-token.sh
+get-access-token.sh
+get-oauth-token.sh
 
 # Editor directories and files
 .vscode/*
