@@ -25,6 +25,7 @@ create-jwt-token.sh
 get-access-token.sh
 get-oauth-token.sh
 test-api-access.sh
+test-detailed-error.sh
 
 # Editor directories and files
 .vscode/*
