@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "fetch-sheets": "node scripts/fetchSheets.mjs",
+    "populate-sheets": "node scripts/populateSheets.mjs",
+    "predev": "node scripts/fetchSheets.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/fetchSheets.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
