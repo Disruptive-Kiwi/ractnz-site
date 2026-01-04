@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "International Yoga Day",
+    "date": "21st June 2025",
+    "location": "Avondale Community Centre",
+    "description": "Yoga, mindfulness, and wellness celebration."
+  },
+  {
+    "id": 2,
+    "title": "Teej Mela (Fair)",
+    "date": "2nd August 2025",
+    "location": "Blockhouse Bay Community Centre",
+    "description": "Traditional Rajasthani festivals celebration."
+  },
+  {
+    "id": 3,
+    "title": "Ganesh Chaturthi",
+    "date": "August 2025",
+    "location": "TBC",
+    "description": "Lord Ganesha festival with prayers and performances."
+  }
+]

@@ -1,40 +1,10 @@
 import React from 'react';
 import { useGoogleAnalytics } from '../hooks/useGoogleAnalytics';
-import chairpersonImg from '../assets/images/committee-members-chairperson.jpg';
-import secretaryImg from '../assets/images/committee-members-secretary.jpeg';
-import treasurerImg from '../assets/images/committee-members-treasurer.jpeg';
-
-// Temporary images – replace with local assets once available
-const committee = [
-    {
-        name: 'Mrs. Gurudhari (Reema) Sharma',
-        title: 'Chairperson',
-        photo: chairpersonImg,
-    },
-    // {
-    //   name: 'Mr. Umesh Sharma',
-    //   title: 'Trustee',
-    //   photo: 'https://via.placeholder.com/400?text=Ravi+Joshi',
-    // },
-    {
-        name: 'Mrs. Nirmala Agarwal',
-        title: 'Secretary',
-        photo: secretaryImg,
-    },
-    // {
-    //     name: 'Mr. Ramesh Jindal',
-    //     title: 'Joint Secretary',
-    //     photo: 'https://via.placeholder.com/400?text=Kavita+Sharma',
-    // },
-    {
-        name: 'Mrs. Rachana Nadgir',
-        title: 'Treasurer',
-        photo: treasurerImg,
-    },
-];
+import { useCommittee } from '../hooks/useCommittee';
 
 const CommitteeSection: React.FC = () => {
   const { trackEvent } = useGoogleAnalytics();
+  const committee = useCommittee();
 
   return (
     <section id="committee" className="py-16 bg-gray-50">

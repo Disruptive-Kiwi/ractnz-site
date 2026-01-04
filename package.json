@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "fetch-sheets": "node scripts/fetchSheets.mjs",
+    "populate-sheets": "node scripts/populateSheets.mjs",
+    "predev": "node scripts/fetchSheets.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/fetchSheets.mjs",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -13,6 +17,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "googleapis": "^169.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

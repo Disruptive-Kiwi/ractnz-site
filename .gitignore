@@ -12,6 +12,26 @@ dist
 dist-ssr
 *.local
 
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+service-account-key.json
+*-key.json
+
+# CMS images (downloaded from Google Drive at build time)
+src/assets/images/cms/
+
+# Temporary scripts
+setup-test-sheet.js
+create-jwt-token.sh
+get-access-token.sh
+get-oauth-token.sh
+test-api-access.sh
+test-detailed-error.sh
+test-with-drive-scope.sh
+test-sheets-api.mjs
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

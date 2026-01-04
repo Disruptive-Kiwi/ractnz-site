@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { useGoogleAnalytics } from './hooks/useGoogleAnalytics';
+import { useEvents } from './hooks/useEvents';
+import { useGallery } from './hooks/useGallery';
 import { CheckIcon } from '@heroicons/react/24/outline';
 import heroImage from './assets/images/ractnz-group-pic.jpg';
-import eventCulturalDay from './assets/images/event-cultural-day.png';
-import eventDiwaliDance from './assets/images/event-diwali-dance.jpeg';
-import eventGangaurPuja from './assets/images/event-gangaur-puja.jpeg';
-import eventHariyaliTeej from './assets/images/event-hariyali-teej.jpg';
-import eventBasantPanchmiPicnic from './assets/images/event-basant-panchmi-picnic.jpeg';
 import CommitteeSection from './components/CommitteeSection';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { trackEvent } = useGoogleAnalytics();
+  const events = useEvents();
+  const gallery = useGallery();
 
   // Smooth scroll function for navigation links
   const smoothScrollTo = (targetId: string) => {
@@ -75,40 +74,6 @@ export default function App() {
     return dateString;
   };
   
-  // Mock data for events
-  const events = [
-    {
-      id: 1,
-      title: "International Yoga Day",
-      date: "21st June 2025",
-      location: "Avondale Community Centre",
-      description: "Yoga, mindfulness, and wellness celebration."
-    },
-    {
-      id: 2,
-      title: "Teej Mela (Fair)",
-      date: "2nd August 2025",
-      location: "Blockhouse Bay Community Centre",
-      description: "Traditional Rajasthani festivals celebration."
-    },
-    {
-      id: 3,
-      title: "Ganesh Chaturthi",
-      date: "August 2025",
-      location: "TBC",
-      description: "Lord Ganesha festival with prayers and performances."
-    }
-  ];
-
-  // Mock data for gallery
-  const gallery = [
-    { id: 1, src: eventCulturalDay, alt: "Rajasthani Cultural Day" },
-    { id: 2, src: eventGangaurPuja, alt: "Gangaur Puja" },
-    { id: 3, src: eventDiwaliDance, alt: "Auckland Diwali Dance" },
-    { id: 4, src: eventHariyaliTeej, alt: "Hariyali Teej" },
-    { id: 5, src: eventBasantPanchmiPicnic, alt: "Basant Panchmi Picnic" },
-    { id: 6, src: heroImage, alt: "Rajasthan Diwas Celebration" },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -241,7 +206,7 @@ export default function App() {
           <img
             className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
             src={heroImage}
-            alt="Ractnz group picture"
+            alt="RACTNZ group picture"
           />
         </div>
       </div>
