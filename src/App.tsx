@@ -283,7 +283,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {events.map((event) => (
+            {events.slice(-3).reverse().map((event) => (
               <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900">{event.title}</h3>
