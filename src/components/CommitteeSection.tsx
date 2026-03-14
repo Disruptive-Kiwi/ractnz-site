@@ -23,7 +23,7 @@ const CommitteeSection: React.FC = () => {
           {committee.map((member) => (
             <div
               key={member.name}
-              className="w-full sm:w-60 flex-shrink-0 flex flex-col items-center text-center bg-white rounded-lg shadow-md p-6 transition duration-300 transform hover:-translate-y-1 hover:shadow-lg"
+              className="w-full sm:w-60 flex-shrink-0 flex flex-col items-center text-center bg-white rounded-lg shadow-md border border-gray-100 p-6 transition duration-300 transform hover:-translate-y-1 hover:shadow-lg"
               onClick={() => trackEvent('committee_click', 'committee', member.name)}
             >
               <img

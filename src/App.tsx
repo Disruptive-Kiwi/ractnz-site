@@ -292,9 +292,9 @@ export default function App() {
                 const parsed = new Date(cleanDate);
                 return !isNaN(parsed.getTime()) && parsed > new Date();
               })();
-              
+
               return (
-              <div key={event.id} className="relative bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+              <div key={event.id} className="relative bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                 {isUpcoming && (
                   <div className="absolute top-3 right-3 z-10">
                     <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-sm">
@@ -344,7 +344,7 @@ export default function App() {
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {gallery.map((image) => (
-              <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-md transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
+              <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-md border border-gray-100 transition duration-300 transform hover:-translate-y-1 hover:shadow-xl">
                 <img
                   className="w-full h-64 object-cover transition duration-300 group-hover:scale-110"
                   src={image.src}
@@ -388,7 +388,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md border border-gray-100 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Membership Benefits</h3>
                               <ul className="space-y-4">
                   <li className="flex items-start">
@@ -414,7 +414,7 @@ export default function App() {
                 </ul>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-white rounded-lg shadow-md border border-gray-100 p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Join Our Community</h3>
               
               <div className="text-center">
@@ -458,7 +458,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="bg-white rounded-lg p-12 max-w-2xl mx-auto shadow-md">
+            <div className="bg-white rounded-lg p-12 max-w-2xl mx-auto shadow-md border border-gray-100">
               <svg className="h-16 w-16 text-orange-500 mx-auto mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
