@@ -283,10 +283,30 @@ export default function App() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {events.slice(-3).reverse().map((event) => (
-              <div key={event.id} className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+            {events.slice(-3).map((event) => {
+              // Check if event is upcoming (date is in the future)
+              const isUpcoming = (() => {
+                const dateStr = event.date;
+                // Parse dates like "21st March 2026", "25th December 2025"
+                const cleanDate = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
+                const parsed = new Date(cleanDate);
+                return !isNaN(parsed.getTime()) && parsed > new Date();
+              })();
+              
+              return (
+              <div key={event.id} className="relative bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                {isUpcoming && (
+                  <div className="absolute top-3 right-3 z-10">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-400 to-orange-500 text-white shadow-sm">
+                      <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      Upcoming
+                    </span>
+                  </div>
+                )}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900">{event.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 pr-20">{event.title}</h3>
                   <div className="mt-2 flex items-center text-gray-500">
                     <svg className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -303,7 +323,8 @@ export default function App() {
                   <p className="mt-4 text-gray-600">{event.description}</p>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
