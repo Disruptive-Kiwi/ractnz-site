@@ -283,7 +283,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {events.slice(-3).map((event) => {
+            {events.slice(-3).reverse().map((event) => {
               // Check if event is upcoming (date is in the future)
               const isUpcoming = (() => {
                 const dateStr = event.date;
